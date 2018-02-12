@@ -68,7 +68,9 @@ def Audio(data, rate, filename=None, display_audio=True):
 
 def get_audio_from_file(filename):
     with open(filename, 'rb') as f:
-        return "data:audio/wav;base64," + base64.encodestring(f.read())
+        newStr = base64.decodestring(f.read())
+
+return "data:audio/wav;base64," + newStr
 
 
 def audio_from_file(filename):
